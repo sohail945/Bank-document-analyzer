@@ -1,6 +1,6 @@
 # 🏦 Bank Document Analyzer
 
-![Banner](assets/banner.png)
+![Banner](Bank_document_analyzer.png)
 
 > 🔍 Upload banking, loan, or insurance documents (PDF/image) and get an instant AI-generated explanation in simple terms. Red flags? We’ll highlight them too.
 
