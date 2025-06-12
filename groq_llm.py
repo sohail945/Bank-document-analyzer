@@ -34,4 +34,3 @@ def ask_groq(prompt):
         return "Error: Could not get response from LLM"
 
 
-
