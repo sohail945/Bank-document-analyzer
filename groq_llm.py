@@ -25,6 +25,11 @@ def ask_groq(prompt):
     }
 
     response = requests.post(GROQ_ENDPOINT, json=data, headers=headers)
+
+    if response.status_code != 200:
+        print("Groq API Error:", response.text)
+        return "Error: Failed to communicate with LLM"
+
     json_response = response.json()
 
     if "choices" in json_response:
@@ -32,5 +37,3 @@ def ask_groq(prompt):
     else:
         print("Error from Groq:", json_response)
         return "Error: Could not get response from LLM"
-
-

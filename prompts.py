@@ -70,3 +70,20 @@ Rules:
 Here is the document text:
 {text}
 """
+def get_qa_prompt(question, context):
+    return f"""
+You are a helpful assistant specialized in legal and financial documents.
+
+Based only on the content below, answer the user's question in the same language the question is asked in (Roman Urdu or English).
+
+--- DOCUMENT CONTENT ---
+{context}
+
+--- USER QUESTION ---
+{question}
+
+Rules:
+- Do NOT say "Based on the document" or repeat the question.
+- Answer in a clear and direct way.
+- If the answer is not present in the content, say: "Yeh maloomat document mein nahi mil rahi." or "This information is not available in the document."
+"""
