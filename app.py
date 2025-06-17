@@ -53,14 +53,12 @@ def process_documents(files, language_choice):
             image = Image.open(file.name)
             all_text = extract_text(image)
         else:
-            summaries.append(f"❌ Unsupported file type: {name}")
+            summaries.append(f"Unsupported file type: {name}")
             continue
 
         # Step 2: Use raw Urdu or translated English based on user choice
-        if language_choice == "English":
-            processed_text = translate_to_english(all_text)
-        else:  # Urdu
-            processed_text = all_text
+         # Urdu
+        processed_text = all_text
 
         # Step 3: Prompt LLM
         prompt = get_explanation_prompt(processed_text, language_choice)
@@ -79,7 +77,7 @@ demo = gr.Interface(
         gr.Radio(["English", "Roman Urdu"], label="Select Output Language", value="English")
     ],
     outputs=gr.Textbox(label="Document Explanation", lines=30),
-    title="📄 Bank Document Explainer",
+    title="Bank Document Explainer",
     description="Upload scanned documents related to **banking, loans, or insurance**. Get a clear explanation and red flag summary in English or Urdu."
 )
 
