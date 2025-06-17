@@ -57,13 +57,9 @@ The assistant will reply based on both:
 git clone https://github.com/sohail945/Bank-document-analyzer.git
 cd Bank-document-analyzer
 
-# 2. Create and activate virtual environment
-python -m venv venv
-venv\Scripts\activate  # On Windows
-
-# 3. Install dependencies
+# 2. Install dependencies
 pip install -r requirements.txt
 
-# 4. Add your Groq API key
+# 3. Add your Groq API key
 Create a .env file and include:
 GROQ_API_KEY=your_key_here
